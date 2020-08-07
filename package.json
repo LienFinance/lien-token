@@ -1,0 +1,23 @@
+{
+  "name": "lien-token",
+  "scripts": {
+    "compile": "npx truffle compile",
+    "console": "npx truffle console",
+    "coverage": "npx truffle run coverage",
+    "develop": "npx truffle develop",
+    "migrate": "npx truffle migrate",
+    "make-snapshot": "npx truffle migrate --network private",
+    "test": "npx truffle test"
+  },
+  "devDependencies": {
+    "@openzeppelin/contracts": "^3.0.0",
+    "@truffle/hdwallet-provider": "^1.0.35",
+    "chai": "^4.2.0",
+    "dotenv": "^8.2.0",
+    "openzeppelin-test-helpers": "^0.5.1",
+    "prettier": "^2.0.5",
+    "prettier-plugin-solidity": "^1.0.0-alpha.49",
+    "solidity-coverage": "^0.7.5",
+    "truffle": "^5.1.23"
+  }
+}
