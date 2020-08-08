@@ -21,7 +21,7 @@
 const HDWalletProvider = require("@truffle/hdwallet-provider");
 require("dotenv").config();
 
-const { WEB3_PROVIDER_URL, MNEMONIC } = process.env;
+const {WEB3_PROVIDER_URL, MNEMONIC} = process.env;
 
 module.exports = {
     /**
@@ -61,7 +61,8 @@ module.exports = {
         },
         mainnet: {
             provider: new HDWalletProvider(MNEMONIC, WEB3_PROVIDER_URL),
-            network_id: 1
+            network_id: 1,
+            gasPrice: 60000000000
         }
 
         // Another network with more advanced options...
