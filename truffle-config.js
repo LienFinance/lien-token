@@ -21,7 +21,7 @@
 const HDWalletProvider = require("@truffle/hdwallet-provider");
 require("dotenv").config();
 
-const {WEB3_PROVIDER_URL, MNEMONIC} = process.env;
+const { WEB3_PROVIDER_URL, MNEMONIC } = process.env;
 
 module.exports = {
     /**
@@ -58,6 +58,10 @@ module.exports = {
         ropsten: {
             provider: new HDWalletProvider(MNEMONIC, WEB3_PROVIDER_URL),
             network_id: 3
+        },
+        mainnet: {
+            provider: new HDWalletProvider(MNEMONIC, WEB3_PROVIDER_URL),
+            network_id: 1
         }
 
         // Another network with more advanced options...
@@ -98,7 +102,7 @@ module.exports = {
     compilers: {
         solc: {
             // version: "0.5.1",    // Fetch exact version from solc-bin (default: truffle's version)
-            version: "0.6.5"
+            version: "0.6.5",
             // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
             // settings: {          // See the solidity docs for advice about optimization and evmVersion
             //  optimizer: {
@@ -107,6 +111,14 @@ module.exports = {
             //  },
             //  evmVersion: "byzantium"
             // }
+            settings: {
+                // See the solidity docs for advice about optimization and evmVersion
+                optimizer: {
+                    enabled: true,
+                    runs: 20000
+                },
+                evmVersion: "constantinople"
+            }
         }
     },
     plugins: ["solidity-coverage"]
