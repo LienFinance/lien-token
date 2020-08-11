@@ -52,15 +52,15 @@ module.exports = {
             network_id: "*" // Any network (default: none)
         },
         rinkeby: {
-            provider: new HDWalletProvider(MNEMONIC, WEB3_PROVIDER_URL),
+            provider: () => new HDWalletProvider(MNEMONIC, WEB3_PROVIDER_URL),
             network_id: 4
         },
         ropsten: {
-            provider: new HDWalletProvider(MNEMONIC, WEB3_PROVIDER_URL),
+            provider: () => new HDWalletProvider(MNEMONIC, WEB3_PROVIDER_URL),
             network_id: 3
         },
         mainnet: {
-            provider: new HDWalletProvider(MNEMONIC, WEB3_PROVIDER_URL),
+            provider: () => new HDWalletProvider(MNEMONIC, WEB3_PROVIDER_URL),
             network_id: 1,
             gasPrice: 60000000000
         }
